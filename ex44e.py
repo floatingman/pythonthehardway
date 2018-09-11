@@ -9,8 +9,8 @@ class Other(object):
     def altered(self):
         print("OTHER altered()")
 
-class Child(object):
 
+class Child(object):
 
     def __init__(self):
         self.other = Other()
@@ -25,6 +25,7 @@ class Child(object):
         print("CHILD, BEFORE OTHER altered()")
         self.other.altered()
         print("CHILD, AFTER OTHER altered()")
+
 
 son = Child()
 son.implicit()

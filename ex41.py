@@ -16,7 +16,7 @@ PHRASES = {
     "Set *** to an instance of class %%%.",
     "***.*** = '***'":
     "From *** get the *** attribute and set it to '***'."
-    }
+}
 
 # do they want to drill phrases first
 if len(sys.argv) == 2 and sys.argv[1] == "english":
@@ -28,14 +28,16 @@ else:
 for word in urlopen(WORD_URL).readlines():
     WORDS.append(str(word.strip(), encoding="utf-8"))
 
+
 def convert(snippet, phrase):
-    class_names = [w.capitalize() for w in random.sample(WORDS, snippet.count("%%%"))]
+    class_names = [w.capitalize()
+                   for w in random.sample(WORDS, snippet.count("%%%"))]
     other_names = random.sample(WORDS, snippet.count("***"))
     results = []
     param_names = []
 
     for i in range(0, snippet.count("@@@")):
-        param_count = random.randint(1,3)
+        param_count = random.randint(1, 3)
         param_names.append(', '.join(random.sample(WORDS, param_count)))
 
     for sentence in snippet, phrase:
@@ -55,6 +57,7 @@ def convert(snippet, phrase):
 
         results.append(result)
     return results
+
 
 # keep going until they hit CTRL-D
 try:

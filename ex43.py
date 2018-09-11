@@ -103,6 +103,7 @@ class CentralCorridor(Scene):
             print("DOES NOT COMPUTE!")
             return 'central_corridor'
 
+
 class LaserWeaponArmory(Scene):
 
     def enter(self):
@@ -144,7 +145,6 @@ class LaserWeaponArmory(Scene):
             return 'death'
 
 
-
 class TheBridge(Scene):
 
     def enter(self):
@@ -160,7 +160,7 @@ class TheBridge(Scene):
         action = input("> ")
 
         if action == "throw the bomb":
-             print(dedent("""
+            print(dedent("""
              In a panic you throw the bomb at the group of Gothons
              and make a leap for the door. Right as you drop it a
              Gothon shoots you right in the back killing you. As
@@ -168,7 +168,7 @@ class TheBridge(Scene):
              disarm the bomb. You die knowing they will probably
              blow up when it goes off.
              """))
-             return 'death'
+            return 'death'
 
         elif action == "slowly place the bomb":
             print(dedent("""
@@ -186,6 +186,7 @@ class TheBridge(Scene):
             print("DOES NOT COMPUTE!")
             return "the_bridge"
 
+
 class EscapePod(Scene):
 
     def enter(self):
@@ -198,7 +199,7 @@ class EscapePod(Scene):
         them could be damaged but you don't have time to look.
         There's 5 pods, which one do you take?
         """))
-        good_pod = randint(1,5)
+        good_pod = randint(1, 5)
         guess = input("[pod #]> ")
 
         if int(guess) != good_pod:
@@ -221,12 +222,12 @@ class EscapePod(Scene):
             return 'finished'
 
 
-
 class Finished(Scene):
 
     def enter(self):
         print("You won! Good job.")
         return 'finished'
+
 
 class Map(object):
 
