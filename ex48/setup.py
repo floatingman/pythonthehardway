@@ -10,8 +10,8 @@ config = {
     'download_url': 'Where to download it.',
     'author_email': 'dwnewman78@gmail.com',
     'version': '0.1',
-    'install_requires': ['nose'],
-    'packages': ['NAME'],
+    'install_requires': [],
+    'packages': ['ex48'],
     'scripts': [],
     'name': 'projectname'
 }

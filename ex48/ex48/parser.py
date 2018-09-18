@@ -1,6 +1,7 @@
 class ParserError(Exception):
     pass
 
+
 class Sentence(object):
 
     def __init__(self, subject, verb, obj):
